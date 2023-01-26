@@ -1,3 +1,4 @@
+/* es-lint disable no-unused-vars */
 import Currency from './3-currency';
 
 class Pricing {
