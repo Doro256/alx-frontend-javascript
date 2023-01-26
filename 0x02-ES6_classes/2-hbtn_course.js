@@ -41,8 +41,8 @@ class HolbertonCourse {
     if (!Array.isArray(newStudent)) {
       throw new TypeError('Students must be an array');
     }
-    if (!newStudent.every(newStudent => typeof newStudent === 'string')){
-        throw new TypeError('Name must be a string');
+    if (!newStudent.every((newStudent) => typeof newStudent === 'string')) {
+      throw new TypeError('Name must be a string');
     }
     this._students = newStudent;
   }
