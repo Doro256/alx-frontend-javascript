@@ -9,7 +9,11 @@ class HolbertonCourse {
     }
 
     if (!Array.isArray(students)) {
-      throw new TypeError('Students must be array of Strings');
+      throw new TypeError('Students must be an array');
+    }
+
+    if (!students.every(student => typeof student === 'string')) {
+        throw new TypeError('Students must be an array of strings');
     }
 
     this._name = name;
@@ -38,7 +42,15 @@ class HolbertonCourse {
   }
 
   set students(newStudent) {
-    this._students = newStudent;
+
+    if (!Array.isArray(newStudent)) {
+        throw new TypeError('Students must be an array');
+      }
+  
+      if (!newStudent.every(student => typeof student === 'string')) {
+          throw new TypeError('Students must be an array of strings');
+      }
+      this._students = newStudent;
   }
 }
 
